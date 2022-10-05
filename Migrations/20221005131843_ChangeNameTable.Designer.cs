@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using la_mia_pizzeria_post;
 
@@ -10,9 +11,10 @@ using la_mia_pizzeria_post;
 namespace la_mia_pizzeria_post.Migrations
 {
     [DbContext(typeof(Pizzeria))]
-    partial class PizzeriaModelSnapshot : ModelSnapshot
+    [Migration("20221005131843_ChangeNameTable")]
+    partial class ChangeNameTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

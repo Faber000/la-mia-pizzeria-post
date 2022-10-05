@@ -19,7 +19,7 @@ namespace la_mia_pizzeria_model.Controllers
         {
             using (Pizzeria context = new Pizzeria())
             {
-                IQueryable<Pizza> pizzas = context.Pizza;
+                IQueryable<Pizza> pizzas = context.Pizze;
 
                 return View("Index", pizzas.ToList());
             }
@@ -30,7 +30,7 @@ namespace la_mia_pizzeria_model.Controllers
         {
             using(Pizzeria context = new Pizzeria())
             {
-                Pizza pizzaFound = context.Pizza.Where(pizza => pizza.Id == id).FirstOrDefault();
+                Pizza pizzaFound = context.Pizze.Where(pizza => pizza.Id == id).FirstOrDefault();
 
                 return View(pizzaFound);
             }
@@ -59,7 +59,7 @@ namespace la_mia_pizzeria_model.Controllers
                 newPizza.Immagine = formData.Immagine;
                 newPizza.Prezzo = formData.Prezzo;
 
-                context.Pizza.Add(newPizza);
+                context.Pizze.Add(newPizza);
                 context.SaveChanges();
                 return RedirectToAction("Index");
             }
